@@ -8,21 +8,26 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
 import { ProductListItemComponent } from './product-list/product-list-item/product-list-item.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: ProductListComponent },
-    ])
+      { path: '', component: HomeComponent },
+      { path: 'products', component: ProductListComponent },
+    ]),
+    NgbModule
   ],
   declarations: [
     AppComponent,
     TopBarComponent,
     ProductListComponent,
     ProductAlertsComponent,
-    ProductListItemComponent
+    ProductListItemComponent,
+    HomeComponent
   ],
   bootstrap: [
     AppComponent
