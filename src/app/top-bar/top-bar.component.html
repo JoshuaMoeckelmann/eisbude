@@ -1,7 +1,31 @@
-<div class="main-div">
-  <a [routerLink]="['/']">
-    <h1>My Store</h1>
-  </a>
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" [routerLink]="'.'">Responsive navbar</a>
 
-  <a class="button fancy-button"><i class="material-icons">shopping_cart</i>Checkout</a>
-</div>
+  <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+    &#9776;
+  </button>
+
+  <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="'products'" (click)="isMenuCollapsed = true">Produkte</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Examples</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">About</a>
+      </li>
+      <li class="nav-item dropdown">
+        <div ngbDropdown class="d-inline-block">
+          <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</a>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button ngbDropdownItem>Action - 1</button>
+            <button ngbDropdownItem>Another Action</button>
+            <button ngbDropdownItem>Something else is here</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
