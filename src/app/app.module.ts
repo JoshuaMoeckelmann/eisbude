@@ -10,6 +10,8 @@ import { ProductAlertsComponent } from './product-alerts/product-alerts.componen
 import { ProductListItemComponent } from './product-list/product-list-item/product-list-item.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
+import { CarousellComponent } from './home/carousell/carousell.component';
+import { ProductDisplayComponent } from './home/product-display/product-display.component';
 
 @NgModule({
   imports: [
@@ -27,7 +29,9 @@ import { HomeComponent } from './home/home.component';
     ProductListComponent,
     ProductAlertsComponent,
     ProductListItemComponent,
-    HomeComponent
+    HomeComponent,
+    CarousellComponent,
+    ProductDisplayComponent
   ],
   bootstrap: [
     AppComponent

@@ -1,5 +1,5 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" [routerLink]="'.'">Responsive navbar</a>
+  <a class="navbar-brand" [routerLink]="'/'" (click)="isMenuCollapsed = true">Die Eisbude</a>
 
   <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
     &#9776;
@@ -7,22 +7,25 @@
 
   <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
     <ul class="navbar-nav">
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" [routerLink]="'products'" (click)="isMenuCollapsed = true">Produkte</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Examples</a>
+        <a class="nav-link" [routerLink]="'/'" (click)="isMenuCollapsed = true">Examples</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">About</a>
+        <a class="nav-link" [routerLink]="'/'" (click)="isMenuCollapsed = true">About</a>
       </li>
       <li class="nav-item dropdown">
-        <div ngbDropdown class="d-inline-block">
-          <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</a>
-          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-            <button ngbDropdownItem>Action - 1</button>
-            <button ngbDropdownItem>Another Action</button>
-            <button ngbDropdownItem>Something else is here</button>
+        <div class="d-flex" (mouseenter)="$event.stopPropagation(); myDrop.open();"
+          (mouseleave)="$event.stopPropagation(); myDrop.close();">
+          <div ngbDropdown #myDrop="ngbDropdown" class="d-inline-block">
+            <a class="nav-link" [routerLink]="'products'" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</a>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem [routerLink]="'/'">Action - 1</button>
+              <button ngbDropdownItem [routerLink]="'/'">Another Action</button>
+              <button ngbDropdownItem [routerLink]="'/'">Something else is here</button>
+            </div>
           </div>
         </div>
       </li>
