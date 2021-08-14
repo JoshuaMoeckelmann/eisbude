@@ -1,0 +1,20 @@
+<div fxLayout="row" fxLayout.lt-sm="column">
+    <div fxHide.lt-sm *ngIf="leftAlligned" fxFlex="40" class="photo-left">
+        <img [src]="flexOverViewItem.imagePath">
+    </div>
+    <div fxHide.gt-xs fxShow.lt-sm fxFlex="40" class="photo-left">
+        <img [src]="flexOverViewItem.imagePath">
+    </div>
+    <div fxFlex="60" [ngClass]="{'photo-left': leftAlligned, 'photo-right': !leftAlligned}">
+        <div class="sectionHeader">
+            <h6>{{flexOverViewItem.preheading}}</h6>
+            <h3>{{flexOverViewItem.heading}}</h3>
+            <div *ngFor="let subText of flexOverViewItem.subTexts">
+                <h6>{{subText}}</h6>
+            </div>
+        </div>
+    </div>
+    <div fxHide.lt-sm *ngIf="!leftAlligned" fxFlex="40" class="photo-right">
+        <img [src]="flexOverViewItem.imagePath">
+    </div>
+</div>

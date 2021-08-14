@@ -16,8 +16,13 @@ img {
 }
 
 .carousel-caption {
-    top: 60%;
-    transform: translateY(-60%);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+
 }
 
 .carousel-caption-title {
