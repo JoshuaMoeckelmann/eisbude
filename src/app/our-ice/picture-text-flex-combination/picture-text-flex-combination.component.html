@@ -1,0 +1,3 @@
+<div *ngFor="let flexOverviewItem of flexOverviewItems; let i = index">
+    <app-flex-overview [flexOverViewItem]=flexOverviewItem [leftAlligned]="i % 2 == 0"></app-flex-overview>
+</div>

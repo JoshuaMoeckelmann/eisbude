@@ -1,0 +1,30 @@
+.sectionHeader {
+    text-align: center;
+    padding: 15vmin;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.photo-left {
+    background-color: #F3F2F2;
+}
+
+.photo-right {
+    background-color: #A2185B1A;
+}
+
+h3 {
+    font-size: 1vmin + 4;
+}
+
+h6 {
+    font-size: 1vmin + 1;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
