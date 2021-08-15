@@ -7,13 +7,14 @@ img {
 .loading-image-div {
   display: flex;
   align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 100%;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
 }
 
 .loading-image {
   height: 10%;
   width: 10%;
-  object-fit: cover;
+  object-fit: contain;
 }
