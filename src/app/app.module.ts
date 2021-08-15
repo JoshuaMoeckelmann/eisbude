@@ -18,6 +18,8 @@ import { SectionHeaderComponent } from './abstract/section-header/section-header
 import { PictureTextFlexCombinationComponent } from './our-ice/picture-text-flex-combination/picture-text-flex-combination.component';
 import { FlexOverviewComponent } from './abstract/flex-overview/flex-overview.component';
 import { ImageComponent } from './abstract/image/image.component';
+import { ProductOverviewComponent } from './product-overview/product-overview.component';
+import { ProductOverviewItemComponent } from './product-overview/product-overview-item/product-overview-item.component';
 
 @NgModule({
   imports: [
@@ -25,7 +27,7 @@ import { ImageComponent } from './abstract/image/image.component';
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
-      { path: 'products', component: ProductListComponent },
+      { path: 'products', component: ProductOverviewComponent },
       { path: 'our-ice', component: OurIceComponent },
     ]),
     NgbModule,
@@ -44,7 +46,9 @@ import { ImageComponent } from './abstract/image/image.component';
     SectionHeaderComponent,
     PictureTextFlexCombinationComponent,
     FlexOverviewComponent,
-    ImageComponent
+    ImageComponent,
+    ProductOverviewComponent,
+    ProductOverviewItemComponent
   ],
   bootstrap: [
     AppComponent
