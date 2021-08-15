@@ -1,7 +1,7 @@
 <ngb-carousel class="carousel" *ngIf="carouselItems">
     <ng-template ngbSlide *ngFor="let carouselItem of carouselItems">
-        <div class="picsum-img-wrapper">
-            <img [src]="carouselItem.imagePath" alt="Random slide">
+        <div class="carousel-image-div">
+            <app-image class="carousel-image" [source]="carouselItem.imagePath" alt="Random slide"></app-image>
         </div>
         <div class="carousel-caption">
             <h1 class="carousel-caption-title">{{carouselItem.heading}}</h1>

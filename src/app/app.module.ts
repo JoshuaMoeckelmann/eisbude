@@ -40,6 +40,7 @@ import { OurIceComponent } from './our-ice/our-ice.component';
 import { SectionHeaderComponent } from './abstract/section-header/section-header.component';
 import { PictureTextFlexCombinationComponent } from './our-ice/picture-text-flex-combination/picture-text-flex-combination.component';
 import { FlexOverviewComponent } from './abstract/flex-overview/flex-overview.component';
+import { ImageComponent } from './abstract/image/image.component';
 
 @NgModule({
   imports: [
@@ -65,7 +66,8 @@ import { FlexOverviewComponent } from './abstract/flex-overview/flex-overview.co
     OurIceComponent,
     SectionHeaderComponent,
     PictureTextFlexCombinationComponent,
-    FlexOverviewComponent
+    FlexOverviewComponent,
+    ImageComponent
   ],
   bootstrap: [
     AppComponent
