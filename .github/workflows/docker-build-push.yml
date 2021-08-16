@@ -1,4 +1,4 @@
-name: docker-build-push
+name: docker-build-push-normal-alpine
 
 on:
   pull_request:
@@ -9,6 +9,9 @@ on:
 jobs:
   docker:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dockerfile: ["/normal-alpine.dockerfile", "/rpi-alpine.dockerfile"]
     steps:
       -
         name: Set up QEMU
@@ -27,5 +30,6 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
+          file: ${{matrix.dockerfile}}
           push: true
           tags: redbeard2/eisbude:latest
