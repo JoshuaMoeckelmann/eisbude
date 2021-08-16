@@ -11,7 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        dockerfile: ["/normal-alpine.dockerfile", "/rpi-alpine.dockerfile"]
+        include:
+          - dockerfile: "/normal-alpine.dockerfile"
+            tag: "latest"
+          - dockerfile: "/rpi-alpine.dockerfile"
+            tag: "rpi-latest"
     steps:
       -
         name: Set up QEMU
@@ -32,4 +36,4 @@ jobs:
         with:
           file: ${{matrix.dockerfile}}
           push: true
-          tags: redbeard2/eisbude:latest
+          tags: redbeard2/eisbude:${{matrix.tag}}
